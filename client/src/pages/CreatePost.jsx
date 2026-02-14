@@ -42,7 +42,8 @@ export default function CreatePost() {
                 setError(err.error || 'Failed to create post');
             }
         } catch (err) {
-            setError('Network error');
+            console.error('Submit error:', err);
+            setError('Network error: ' + err.message);
         } finally {
             setSaving(false);
         }
